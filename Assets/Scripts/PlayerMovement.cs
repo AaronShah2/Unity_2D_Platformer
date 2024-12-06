@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 10f;
     public float extraJumps = 1;
 
+    public float jumpDeacceleration = 0.5f;
     [SerializeField] Transform feet;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Rigidbody2D rb;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     float jumpCooldown;
 
     private bool isGrounded;
+
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +30,12 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             Jump();
+        }
+
+        // Mechanic to increase if button is held down
+        if (Input.GetButtonUp("Jump")  && rb.linearVelocityY > 0f)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocityY * jumpDeacceleration);
         }
 
         CheckGrounded();
