@@ -1,3 +1,4 @@
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,10 +15,12 @@ public class PlayerMovement : MonoBehaviour
     public float GroundCheckRadius = 0.2f;
 
     // Variable for extra jumps
-    int jumpCount = 0;
-    float jumpCooldown;
+    private int jumpCount = 0;
+    private float jumpCooldown;
 
     private bool isGrounded;
+
+    private bool playerFacingRight = true;
 
     // Update is called once per frame
     void Update()
@@ -37,6 +40,19 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocityY * jumpDeacceleration);
         }
+
+        // change directions depending on what direction player is moving
+        if (moveInput < 0 && playerFacingRight)
+        {
+            Flip();
+        }
+        if(moveInput > 0 && !playerFacingRight){
+            Flip();
+        }
+
+
+        // Debug
+        DebugCode();
 
         CheckGrounded();
     }
@@ -58,6 +74,23 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
         } else {
             isGrounded = false;
+        }
+    }
+
+    void Flip(){
+        playerFacingRight = !playerFacingRight;
+        transform.Rotate(0f, 180f, 0f);
+    }
+
+    void DebugCode(){
+        bool IsFacingRight = transform.localScale.x > 0;
+        if (IsFacingRight)
+        {
+            Debug.Log("Character is facing right");
+        }
+        else
+        {
+            Debug.Log("Character is facing left");
         }
     }
 }
