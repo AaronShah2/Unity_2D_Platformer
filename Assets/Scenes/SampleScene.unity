@@ -1171,7 +1171,7 @@ Transform:
   m_GameObject: {fileID: 1049774879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.227, y: 0.555, z: 0}
+  m_LocalPosition: {x: 0.524, y: 0.196, z: 0}
   m_LocalScale: {x: 0.3561316, y: 0.29103583, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1264,10 +1264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f381ff794b1585446bccc4831ca4c391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 5
+  moveSpeed: 10
+  jumpForce: 12
   extraJumps: 1
-  jumpDeacceleration: 0.9
+  jumpDeacceleration: 0.6
   feet: {fileID: 1830579571}
   groundLayer:
     serializedVersion: 2
@@ -1335,7 +1335,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.8
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: a47ddac8a25c3b9449720a3d66a9be6e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1411,8 +1411,8 @@ Transform:
   m_GameObject: {fileID: 1830569854}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.15, y: -3.12, z: 0}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalPosition: {x: -8.497, y: -3.5016, z: 0}
+  m_LocalScale: {x: 0.95, y: 0.95684, z: 0.95}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1830579571}
