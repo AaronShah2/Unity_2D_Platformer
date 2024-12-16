@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         // Debug
-        DebugCode();
+        // DebugCode();
 
         CheckGrounded();
     }
