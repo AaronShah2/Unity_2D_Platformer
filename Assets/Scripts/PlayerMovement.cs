@@ -93,4 +93,16 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Character is facing left");
         }
     }
+
+    public int GetJumpCount(){
+        return jumpCount;
+    }
+
+    public void SetJumpCount(int jumpCount){
+        this.jumpCount = jumpCount;
+    }
+
+    public bool GetIsGrounded(){
+        return this.isGrounded;
+    }
 }
